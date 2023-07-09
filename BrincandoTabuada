@@ -1,0 +1,49 @@
+// Iniciando os estudos em C#
+
+using System;
+using System.ComponentModel.Design;
+
+namespace Study
+{
+    class Tabuada
+    {
+            static void Main()
+            {
+            int chance = 0;
+                // O usúario esscolhe a tabuada que deseja aprender.
+
+                Console.WriteLine("Vamos praticar a tabuada? Qual número gostaria de aprender?");
+                int tab = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Hoje vamos aprender a tabuda de número "  + tab);
+
+            // Em seguida fará perguntas de 1 a 10.
+            for (int i = 0; i <= 10; i++)
+            {
+
+                Console.WriteLine($"O número {tab} multiplicado por {i} é igual a:");
+                int resp = Convert.ToInt32(Console.ReadLine());
+                int resultado = tab * i;
+
+                if (resp == resultado)
+                {
+                    Console.WriteLine("Parabéns! Você acertou!");
+                    continue;
+                }
+                else
+                {
+                    do
+                    {
+                        Console.WriteLine("Que pena, resposta errada, tente novamente!");
+
+                        Console.WriteLine($"O número {tab} multiplicado por {i} é igual a:");
+                        chance = Convert.ToInt32(Console.ReadLine());
+                        
+                    } while (chance != resultado); // Faz a pergunta até acertar.
+
+                }
+            }  
+            }
+
+    }
+}
